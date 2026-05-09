@@ -1,0 +1,6 @@
+{
+  "name": "SINTA PADI",
+  "description": "Sistem Informasi Tata Kelola Padi (SINTA PADI) - Aplikasi survei konversi gabah ke beras untuk wilayah Provinsi Jawa Tengah.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": []
+}

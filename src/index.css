@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
+
+.leaflet-tooltip.custom-map-tooltip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0;
+}
+
+.leaflet-tooltip-top.custom-map-tooltip:before,
+.leaflet-tooltip-bottom.custom-map-tooltip:before,
+.leaflet-tooltip-left.custom-map-tooltip:before,
+.leaflet-tooltip-right.custom-map-tooltip:before {
+  border: none !important;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --color-primary: #6366f1; /* Indigo 500 */
+  --color-primary-dark: #4f46e5; /* Indigo 600 */
+  --color-success: #10b981; /* Emerald 500 */
+  
+  /* Theme variables mapped to theme colors */
+  --color-bg-card: var(--bg-card);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+  --color-border-main: var(--border-color);
+}
+
+@layer base {
+  :root {
+    --bg-main: #f1f5f9; /* slate-100 */
+    --bg-card: #ffffff;
+    --bg-input: #f8fafc; /* slate-50 */
+    --text-main: #0f172a; /* slate-900 */
+    --text-muted: #64748b; /* slate-500 */
+    --border-color: #e2e8f0; /* slate-200 */
+  }
+
+  .dark {
+    --bg-main: #0f172a; /* slate-900 */
+    --bg-card: #1e293b; /* slate-800 */
+    --bg-input: #1e293b; /* slate-800 */
+    --text-main: #f8fafc; /* slate-50 */
+    --text-muted: #94a3b8; /* slate-400 */
+    --border-color: #334155; /* slate-700 */
+  }
+
+  body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    @apply font-sans antialiased transition-colors duration-300;
+  }
+}
+
+.card-polish {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+  @apply rounded-xl border shadow-sm transition-all;
+}
+
+.input-polish {
+  background-color: var(--bg-input);
+  border-color: var(--border-color);
+  color: var(--text-main);
+  @apply w-full border rounded-lg px-4 py-2.5 outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/50 transition-all placeholder:text-slate-400;
+}
+
+.btn-primary {
+  @apply bg-primary text-white font-bold py-2.5 px-6 rounded-lg hover:bg-primary-dark transition-all shadow-sm active:scale-[0.98];
+}
